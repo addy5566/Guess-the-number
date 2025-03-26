@@ -50,7 +50,11 @@ function checkGuess(guess){
         endGame();
     }
 
-    
+    if(numGuesses >= 10 ){
+        displayMessage(`Game Over. The correct number was ${randomNum}.`);
+        endGame();
+    }
+
     else if(guess>randomNum){
         displayMessage(`your number is too high.`)
     }
@@ -60,10 +64,7 @@ function checkGuess(guess){
         displayMessage(`Your number is too low.`);
     }
 
-    if(numGuesses >= 10){
-        displayMessage(`Game Over. The correct number was ${randomNum}.`);
-        endGame();
-    }
+    
 }
 
 function cleanupGuess(guess){
@@ -72,8 +73,8 @@ function cleanupGuess(guess){
     remaining.innerHTML = `${10-numGuesses}`;
 }
 
-function displayMessage(message){
-    advice.innerHTML = `${message}`;
+function displayMessage(w){
+    advice.innerHTML = `${w}`;
 }
 
 
